@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Weather App</h1>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+      
+    </header>
+    <form id="search-form" autocomplete="off">
+      <input type="text" id="city-input" placeholder="Enter city..." maxlength="50" required />
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+    <div id="loading" class="hidden">Loading...</div>
+    <div id="error" class="error hidden"></div>
+    <main>
+      <section id="weather-result"></section>
+      <section id="forecast-section">
+        <div id="forecast"></div>
+        <button id="load-more-forecast" class="hidden">Load more</button>
+      </section>
+      <section id="favorites-section">
+        <h2>Favorites</h2>
+        <div style="margin-bottom:0.5em;">
+          <label for="fav-sort">Sort:</label>
+          <select id="fav-sort">
+            <option value="az">A-Z</option>
+            <option value="za">Z-A</option>
+          </select>
+          <label for="fav-filter" style="margin-left:1em;">Filter:</label>
+          <input id="fav-filter" type="text" placeholder="Type to filter..." style="width:120px;" />
+        </div>
+        <ul id="favorites-list"></ul>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <p>Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener">OpenWeather</a> | UI inspired by <span>design sample</span></p>
+  </footer>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
